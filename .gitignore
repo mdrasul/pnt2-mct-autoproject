@@ -22,3 +22,5 @@ allure-results
 # Run-time screenshots
 *.png
 /.project
+/target/
+/.classpath
