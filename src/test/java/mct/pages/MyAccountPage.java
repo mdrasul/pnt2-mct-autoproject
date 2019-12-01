@@ -19,6 +19,9 @@ public class MyAccountPage extends MasterPage {
 	String myAccountLabel = "Xpath:.//*[@id='item_details']/section/div/h3";
 	String LocatorsOfAllOptions = "Xpath://div[@class='myaccount_list']//div[@class='col-sm-12 col-lg-3 col-md-3']/a";
 	
+	String myorderLink = "Xpath://a[text()='My Orders']";
+
+	
 	// Getter & Setters -
 
 	public String getMyAccountLabel() {
@@ -34,6 +37,12 @@ public class MyAccountPage extends MasterPage {
 	}
 
 	
+	public void takeMetoMyOrderPage() {
+		
+		clickElement(myorderLink);
+
+		
+	}
 	
 	
 	// What the Page Can Do Functions 

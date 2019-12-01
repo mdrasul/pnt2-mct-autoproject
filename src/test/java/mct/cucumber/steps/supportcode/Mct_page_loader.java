@@ -5,6 +5,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import mct.pages.HomePage;
 import mct.pages.MyAccountPage;
+import mct.pages.MyOrdersPage;
 
 public class Mct_page_loader {
 
@@ -14,6 +15,8 @@ public class Mct_page_loader {
 	// All Page Reference Coming From Page Object Model
 	public HomePage homePage;
 	public MyAccountPage myAccountPage;
+	public MyOrdersPage myOrdersPage;
+
 
 
 	public WebDriver getDriver(){
@@ -43,4 +46,13 @@ public class Mct_page_loader {
 		return myAccountPage;
 	}
 
+	
+	public MyOrdersPage getMyOrdersPage() {
+		if (myOrdersPage == null){
+			myOrdersPage = new MyOrdersPage(driver);
+		}
+		return myOrdersPage;
+	}
+	
+	
 }
