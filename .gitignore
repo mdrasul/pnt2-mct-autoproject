@@ -24,3 +24,6 @@ allure-results
 /.project
 /target/
 /.classpath
+/.settings/
+/test-output/
+
