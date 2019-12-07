@@ -5,6 +5,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 
 import java.util.List;
 
+import org.openqa.selenium.By;
 import org.testng.Assert;
 
 import io.cucumber.datatable.DataTable;
@@ -40,6 +41,21 @@ public class Mct_order_steps {
 		
 	}
 	
+	
+	@Then("I exepct count {int} in my order table")
+	public void i_exepct_count_in_my_order_table(int expCount) {
+	    // Write code here that turns the phrase above into concrete actions
+	    // throw new cucumber.api.PendingException();
+		
+		// =>> Get the total number of rows from a web table 
+		int actualCount = page.getMyOrdersPage().getTotalTableRowsCount()-1;
+		
+		
+		
+		Assert.assertEquals(actualCount,expCount,"Failed To Find the Correct Number of!!!");
+
+		
+	}
 
 
 }

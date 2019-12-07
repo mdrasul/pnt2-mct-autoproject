@@ -25,7 +25,10 @@ public class Mct_page_loader {
 
 			// Setup Chrome Driver so it can work in all place 
 			System.out.println("Driver Starting....");
-			System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+"\\chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+"//chromedriver");
+			
+			
+			
 			driver = new ChromeDriver();
 		}
 		return driver;		
