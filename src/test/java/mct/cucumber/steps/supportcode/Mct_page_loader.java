@@ -25,10 +25,17 @@ public class Mct_page_loader {
 
 			// Setup Chrome Driver so it can work in all place 
 			System.out.println("Driver Starting....");
-			System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+"//chromedriver");
 			
+		    String os = System.getProperty("os.name").toLowerCase();
+		    System.out.println(os);
+
 			
-			
+			if(os.contains("mac")) {
+				System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+"//chromedriver");
+			}else if(os.contains("windows")) {
+				System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+"//chromedriver.exe");
+			}
+						
 			driver = new ChromeDriver();
 		}
 		return driver;		
