@@ -1,5 +1,6 @@
 package mct.cucumber.steps.supportcode;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -42,7 +43,7 @@ public class Mct_cuck_hooks {
 			}
 		}
 
-
+       ((JavascriptExecutor) driver).executeScript("sauce:job-result=" + (scenario.isFailed() ? "failed" : "passed"));
 		driver.close();
 	}
 }
