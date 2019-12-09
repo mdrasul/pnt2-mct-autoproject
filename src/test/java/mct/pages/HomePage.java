@@ -2,6 +2,8 @@ package mct.pages;
 
 import org.openqa.selenium.WebDriver;
 
+import mct.util.SharedConfig;
+
 public class HomePage extends MasterPage{
 
 	// All Locators Or XPath for this Page  
@@ -34,7 +36,7 @@ public class HomePage extends MasterPage{
 	// What the Page Can Do Functions 
 	public void gotoHomePage() {
 		// openBrowser(broowser);
-		gotoURL("https://demo.iscripts.com/multicart/demo/index.php");
+		gotoURL(SharedConfig.config.get("URL"));
 	}
 	
 	
