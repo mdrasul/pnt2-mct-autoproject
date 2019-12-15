@@ -16,8 +16,9 @@ public class HomePage extends MasterPage{
 	String logOutLink = "Xpath://*[@id=\"drp_div\"]/ul/li/div/div[2]/a";
 	String SearchBox = "Xpath://*[@id=\"search_header_top\"]/form/input[4]";
 	String SearchButton = "Xpath://*[@id=\"search_header_btt\"]";
+	String noSearchResultMessage = "Xpath://*[@id=\"items_display_area\"]/div";
 
-	
+
 	String myAccountLink = "Xpath:.//*[@id='drp_div']/ul/li/div/div[1]/a";
 
 	
@@ -76,11 +77,14 @@ public class HomePage extends MasterPage{
 	}
 
 	public void sendKeysToSearchBox() {
-		typeOnElement(SearchBox,"Shirt");
+		typeOnElement(SearchBox,"ABCD");
 	}
 
 	public void clickSearcButton() {
 		clickElement(SearchButton);
 	}
 
+	public String getNoSearchResultMessage() {
+		return getElementText(noSearchResultMessage);
+	}
 }

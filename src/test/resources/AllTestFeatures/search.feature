@@ -6,5 +6,6 @@ Feature: Search
 
   Scenario: User can return a positive search case scenario
     When User clicks on searchbox
-    Then User enters keys
-    Then User clicks search button
+    And User enters keys
+    And User clicks search button
+    Then User sees a error message
