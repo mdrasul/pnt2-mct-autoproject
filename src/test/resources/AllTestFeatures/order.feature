@@ -3,13 +3,24 @@ Feature: My Orders
 
   Background: User on HOme Page
     Given User is on MCT home page
-    When User complete login with id "user" password "pass"
-    And I goto myaccount page
+    And as a user i scroll down our products
+    
 
   #Scenario: user can see the order history
     #And I navigate to order page
     #Then I see a table with al lmy orderes
 
   Scenario: user see correct count of place orderes
-	    And I navigate to order page
-			Then I exepct count 10 in my order table
+	  
+			Then I exepct items options in below table 
+      | BLACK KAJAL                 |
+			| CUTLERY & STATIONARY HOL... |
+			| WOMEN MAROON PRINTED ANA... |
+			| WOMEN BLACK & GOLD-TONED... |
+			| CANDY                       |
+			| SKY VANITY BAG              |
+			| VANIA SHOULDER VANITY BA... |
+			| CREAM LABER BAG             |
+			
+			
+		

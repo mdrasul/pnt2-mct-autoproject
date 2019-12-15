@@ -1,6 +1,10 @@
 package mct.pages;
 
+import java.util.List;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 import mct.util.SharedConfig;
 
@@ -17,7 +21,7 @@ public class HomePage extends MasterPage{
 
 	
 	String myAccountLink = "Xpath:.//*[@id='drp_div']/ul/li/div/div[1]/a";
-
+String validate = "Xpath://h5//a";
 	
 
 	
@@ -70,4 +74,36 @@ public class HomePage extends MasterPage{
 	}
 	
 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	 public void ourProducts() {
+		 
+			// check told product
+				List<WebElement> value = driver.findElements(By.xpath("//h5//a"));
+				System.out.println(value.size());
+				for (int i = 0; i < value.size(); i++) {
+					System.out.println(value.get(i).getText()); 
+		 }
+	 }
+	
+	 
+	 public List<String> verifyourProducts( ) {
+		 
+				return getElementsText(validate); 
+	 }
+	
+	
+	
+	
+	
 }
