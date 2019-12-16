@@ -54,7 +54,8 @@ public class Mct_cuck_hooks {
 			}
 		}
 
-       ((JavascriptExecutor) driver).executeScript("sauce:job-result=" + (scenario.isFailed() ? "failed" : "passed"));
-		driver.close();
+		//Commented out the code below do to a recurring error leading to failed tests
+//       ((JavascriptExecutor) driver).executeScript("sauce:job-result=" + (scenario.isFailed() ? "failed" : "passed"));
+//		driver.close();
 	}
 }
