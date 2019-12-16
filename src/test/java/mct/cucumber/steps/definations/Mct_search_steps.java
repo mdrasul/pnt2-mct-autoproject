@@ -29,12 +29,16 @@ public class Mct_search_steps {
         page.getHomePage().clickSearchBox();
     }
 
-    @And("User enters keys")
-    public void send_keys_to_searchbox() {
+    @And("User enters negative keys")
+    public void send_negative_keys_to_searchbox() {
 
-        page.getHomePage().sendKeysToSearchBox();
+        page.getHomePage().sendNegativeKeysToSearchBox();
+    }
 
-//        Assert.assertEquals(page.getHomePage()."my account","Failed To Land On My Account Page !!! ");
+    @And("User enters positive keys")
+    public void positive() {
+
+        page.getHomePage().sendPositiveKeysToSearchBox();
     }
 
     @And("User clicks search button")
@@ -46,5 +50,10 @@ public class Mct_search_steps {
     @Then("User sees a error message")
     public void error_message(){
         Assert.assertEquals(page.getHomePage().getNoSearchResultMessage(), ("No Results Found !!"));
+    }
+
+    @Then("User sees shirt description")
+    public void shirt_description(){
+        Assert.assertEquals(page.getHomePage().getShirtDescription(), ("MEN BLUE SOLID ROUND NECK.."));
     }
 }
