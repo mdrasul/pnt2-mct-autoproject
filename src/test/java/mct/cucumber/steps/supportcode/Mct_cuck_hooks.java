@@ -49,12 +49,13 @@ public class Mct_cuck_hooks {
 				// Casting 	
 				byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
 				scenario.embed(screenshot, "image/png");
+				 ((JavascriptExecutor) driver).executeScript("sauce:job-result=" + (scenario.isFailed() ?  "Failed":"Passed"));
 			} catch (Exception e) {
 				e.printStackTrace();
+				 ((JavascriptExecutor) driver).executeScript("sauce:job-result=" + (scenario.isFailed() ?  "Failed":"Passed"));
 			}
 		}
-
-       ((JavascriptExecutor) driver).executeScript("sauce:job-result=" + (scenario.isFailed() ? "failed" : "passed"));
 		driver.close();
+		System.out.println("Driver closed");
 	}
 }
