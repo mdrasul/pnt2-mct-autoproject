@@ -6,23 +6,21 @@ import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 
 public class MasterPage {
 
 
-	public WebDriver driver;
-
+	public static WebDriver driver;
+	 
 	
 	// ****** Constructor - 
 	public MasterPage(WebDriver driver) {
 		this.driver = driver;
 	}
 
-	public void gotoURL(String url) {
+	public static void gotoURL(String url) {
 		driver.get(url);
 	}
-
 
 	public void clickElement(String locatores) {
 		if(locatores.contains("ID")) {
@@ -87,6 +85,33 @@ public class MasterPage {
 		
 		return actualOptionResultList;
 	}
+
+	public String getElementTitle(String locatores) {
+		String Title ="Home";
+		
+		try {
+			if(locatores.contains("ID")) {
+				 driver.findElement(By.id(locatores.split(":")[1])).click();
+				 waitFor(1000);
+				 Title = driver.getTitle();
+				System.out.println(Title);
+			}  else if(locatores.contains("Xpath")) {
+				 driver.findElement(By.xpath(locatores.split(":")[1])).click();
+				 waitFor(1000);
+				Title = driver.getTitle();
+					System.out.println(Title);
+			} else if(locatores.contains("Name")) {
+				 driver.findElement(By.name(locatores.split(":")[1])).click();
+				 waitFor(1000);
+				 Title = driver.getTitle();
+					System.out.println(Title);
+			}
+		}catch(Exception e) {
+			Title ="NULL";
+			System.out.println(Title);
+		}
+return Title;
+	}
 	
 	
 	
@@ -138,7 +163,7 @@ public class MasterPage {
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
-	}
+	}	
 
 
 }
