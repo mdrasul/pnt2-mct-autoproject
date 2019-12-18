@@ -1,6 +1,9 @@
 package mct.pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import mct.util.SharedConfig;
 
@@ -17,9 +20,7 @@ public class HomePage extends MasterPage{
 
 	
 	String myAccountLink = "Xpath:.//*[@id='drp_div']/ul/li/div/div[1]/a";
-
-	
-
+	String productName = "Xpath://div[@class='products']/h5//a[contains(text(),'candy')]";
 	
 	// ****** Constructor -
 	public HomePage(WebDriver driver) {
@@ -61,6 +62,12 @@ public class HomePage extends MasterPage{
 	public void takeMetoMyAccountPage() {
 		clickElement(profileNameLabel);
 		clickElement(myAccountLink);
+	}
+	
+	public void takeMetoProductDetailsPage() {
+		waitFor(5000);
+		clickElement(productName);
+		
 	}
 	
 		

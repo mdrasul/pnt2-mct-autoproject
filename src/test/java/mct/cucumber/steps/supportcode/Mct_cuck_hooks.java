@@ -39,22 +39,13 @@ public class Mct_cuck_hooks {
 	}
 
 
-	@After
-	public  void  rampDown(Scenario scenario) {
-
-
-
-		if (scenario.isFailed()) {
-			try {
-				// Casting 	
-				byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
-				scenario.embed(screenshot, "image/png");
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		}
-
-       ((JavascriptExecutor) driver).executeScript("sauce:job-result=" + (scenario.isFailed() ? "failed" : "passed"));
-		driver.close();
-	}
+	/*
+	 * @After public void rampDown(Scenario scenario) { if (scenario.isFailed()) {
+	 * try { // Casting byte[] screenshot = ((TakesScreenshot)
+	 * driver).getScreenshotAs(OutputType.BYTES); scenario.embed(screenshot,
+	 * "image/png"); } catch (Exception e) { e.printStackTrace(); } }
+	 * 
+	 * //((JavascriptExecutor) driver).executeScript("sauce:job-result=" +
+	 * (scenario.isFailed() ? "failed" : "passed")); driver.close(); }
+	 */
 }

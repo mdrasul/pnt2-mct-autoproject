@@ -11,9 +11,13 @@ import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
+import mct.pages.CheckOutPage;
 import mct.pages.HomePage;
 import mct.pages.MyAccountPage;
 import mct.pages.MyOrdersPage;
+import mct.pages.ProductDetailsPage;
+import mct.pages.RegPage;
+import mct.pages.ShippingPage;
 import mct.util.SharedConfig;
 
 public class Mct_page_loader {
@@ -25,6 +29,10 @@ public class Mct_page_loader {
 	public HomePage homePage;
 	public MyAccountPage myAccountPage;
 	public MyOrdersPage myOrdersPage;
+	public RegPage regPage;
+	public ProductDetailsPage productDetailsPage;
+	public ShippingPage shippingPage;
+	public CheckOutPage checkOutPage;
 
 
 
@@ -78,6 +86,34 @@ public class Mct_page_loader {
 		}
 		return homePage;
 	}
+	
+	public RegPage getRegPage() {
+		if(regPage == null) {
+			regPage = new RegPage(driver);
+		}
+		return regPage;
+	}
+	
+	public ProductDetailsPage getProductDetailsPage() {
+		if(productDetailsPage == null) {
+			productDetailsPage = new ProductDetailsPage(driver);
+		}
+		return productDetailsPage;
+	}
+	
+	public ShippingPage getShippingPage() {
+		if(shippingPage == null) {
+			shippingPage = new ShippingPage(driver);
+		}
+		return shippingPage;
+	}
+	
+	public CheckOutPage getCheckOutPage() {
+		if(checkOutPage == null) {
+			checkOutPage = new CheckOutPage(driver);
+		}
+		return checkOutPage;
+	}
 
 	public MyAccountPage getMyAccountPage() {
 		if (myAccountPage == null){
@@ -85,7 +121,6 @@ public class Mct_page_loader {
 		}
 		return myAccountPage;
 	}
-
 	
 	public MyOrdersPage getMyOrdersPage() {
 		if (myOrdersPage == null){

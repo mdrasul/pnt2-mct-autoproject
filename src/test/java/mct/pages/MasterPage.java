@@ -37,6 +37,8 @@ public class MasterPage {
 		}
 
 	}
+	
+	
 
 	public void typeOnElement(String locatores, String valueTotype) {
 		if(locatores.contains("ID")) {
