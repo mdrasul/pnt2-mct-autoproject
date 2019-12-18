@@ -22,6 +22,7 @@ public class MyOrdersPage extends MasterPage {
 	String myOrderTable = "Xpath://table[@class='table table-bordered oder_table']";
 	String allTableRows = "Xpath://table[@class='table table-bordered oder_table']//tr";
 
+	String checkOutButton ="Xpath://*[@id='btnCheckout']"; 
 	
 	
 	public boolean isOrderTableExist() {
@@ -37,6 +38,10 @@ public class MyOrdersPage extends MasterPage {
 	public int getTotalTableRowsCount() {
 		return driver.findElements(By.xpath("//table[@class='table table-bordered oder_table']//tr")).size();
 
+	}
+	
+	public void takeMeToShippingDetailsPage() {
+		clickElement(checkOutButton);
 	}
 	
 
