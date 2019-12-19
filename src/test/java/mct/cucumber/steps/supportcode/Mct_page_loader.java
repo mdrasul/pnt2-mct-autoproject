@@ -11,8 +11,10 @@ import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
+
 import mct.pages.HomePage;
 import mct.pages.MyAccountPage;
+import mct.pages.MyFooterPage;
 import mct.pages.MyOrdersPage;
 import mct.util.SharedConfig;
 
@@ -25,7 +27,7 @@ public class Mct_page_loader {
 	public HomePage homePage;
 	public MyAccountPage myAccountPage;
 	public MyOrdersPage myOrdersPage;
-
+	public MyFooterPage myFooterPage;
 
 
 	public WebDriver getDriver(){
@@ -64,6 +66,8 @@ public class Mct_page_loader {
 				}else if(os.contains("windows")) {
 					System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+"//chromedriver.exe");
 					driver = new ChromeDriver();
+					driver.manage().deleteAllCookies();
+					driver.manage().window().maximize();
 
 				}
 	        }		
@@ -93,6 +97,13 @@ public class Mct_page_loader {
 		}
 		return myOrdersPage;
 	}
+	public MyFooterPage getMyFooterPage() {
+		if(myFooterPage==null) {
+		   myFooterPage=new MyFooterPage(driver);
+		}
+		return myFooterPage ;
+		
+	}
 	
-	
+
 }
