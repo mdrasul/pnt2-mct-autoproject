@@ -30,7 +30,7 @@ public class Mct_page_loader {
 
 	public WebDriver getDriver(){
 
-		if (driver == null){
+		if (driver == null) {
 
 			// Setup Chrome Driver so it can work in all place 
 			System.out.println("Driver Starting....");
@@ -61,6 +61,7 @@ public class Mct_page_loader {
 	        	if(os.contains("mac")) {
 					System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+"//chromedriver");
 					driver = new ChromeDriver();
+					
 				}else if(os.contains("windows")) {
 					System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+"//chromedriver.exe");
 					driver = new ChromeDriver();

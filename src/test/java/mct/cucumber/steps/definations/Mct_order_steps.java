@@ -56,6 +56,35 @@ public class Mct_order_steps {
 
 		
 	}
+	
+	
+	@When("On search option I chose order ID and write order number {string}")
+	public void on_search_option_I_chose_order_ID_and_write_order_number(String string) { 
+	    // Write code here that turns the phrase above into concrete actions
+	    //throw new cucumber.api.PendingException();
+		
+		page.getMyOrdersPage().orderSearchClick(string);
+		
+		
+	}
 
+	
+	@Then("I exepct to see order number {string} from order table")
+	public void i_exepct_to_see_order_number_from_order_table(String string) {
+	    // Write code here that turns the phrase above into concrete actions
+	    //throw new cucumber.api.PendingException();
+		
+		page.getMyOrdersPage().validation();
+	 
+	}
+	
+	@Then("I exepct to see No Results Found !!")
+	public void i_exepct_to_see_No_Results_Found() {
+	    // Write code here that turns the phrase above into concrete actions
+	    //throw new cucumber.api.PendingException();
+		
+		page.getMyOrdersPage().negativeValidation();
+	}
 
+	
 }

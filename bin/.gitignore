@@ -1,0 +1,29 @@
+# Integrated Dev Env files
+.idea
+.DS_Store
+.vscode
+
+# Logs
+*.log
+
+# Runtime data
+error-shots/
+cucumber-results/
+build
+
+
+# Run-time test reports
+cucumber-results
+.tmp
+allure-report
+allure-results
+*.xml
+
+# Run-time screenshots
+*.png
+/.project
+/target/
+/.classpath
+/.settings/
+/test-output/
+

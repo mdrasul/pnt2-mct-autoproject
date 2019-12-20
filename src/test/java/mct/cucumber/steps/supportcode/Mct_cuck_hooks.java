@@ -18,35 +18,29 @@ import mct.util.SharedConfig;
 public class Mct_cuck_hooks {
 
 	Mct_page_loader page;
-	WebDriver driver; 
-	
+	WebDriver driver;
 
-	// Constructor 
+	// Constructor
 	public Mct_cuck_hooks(Mct_page_loader page) {
 		this.page = page;
 	}
 
-
 	@Before
 	public void rampUp() throws FileNotFoundException, IOException {
-		
-		// Read The Prop & Make it Shareable for the entire Project 
+
+		// Read The Prop & Make it Shareable for the entire Project
 		SharedConfig.config = ReadConfigFile.readProperties();
-	
+
 		System.out.println("Ramp Up  Started...");
 		driver = page.getDriver();
-
 	}
 
-
 	@After
-	public  void  rampDown(Scenario scenario) {
-
-
+	public void rampDown(Scenario scenario) {
 
 		if (scenario.isFailed()) {
 			try {
-				// Casting 	
+				// Casting
 				byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
 				scenario.embed(screenshot, "image/png");
 			} catch (Exception e) {
@@ -54,7 +48,9 @@ public class Mct_cuck_hooks {
 			}
 		}
 
-       ((JavascriptExecutor) driver).executeScript("sauce:job-result=" + (scenario.isFailed() ? "failed" : "passed"));
+		// ((JavascriptExecutor) driver).executeScript("sauce:job-result=" +
+		// (scenario.isFailed() ? "failed" : "passed"));
+
 		driver.close();
 	}
 }
