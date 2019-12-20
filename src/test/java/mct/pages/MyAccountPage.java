@@ -20,7 +20,8 @@ public class MyAccountPage extends MasterPage {
 	String LocatorsOfAllOptions = "Xpath://div[@class='myaccount_list']//div[@class='col-sm-12 col-lg-3 col-md-3']/a";
 	
 	String myorderLink = "Xpath://a[text()='My Orders']";
-
+	
+	String profileLink ="Xpath://*[@id=\"item_details\"]/div[3]/div[1]/div/div[2]/a";
 	
 	// Getter & Setters -
 
@@ -43,6 +44,14 @@ public class MyAccountPage extends MasterPage {
 
 		
 	}
+	
+	
+	public void takeMetoProfilePage() {
+		
+		clickElement(profileLink);
+	}
+	
+	
 	
 	
 	// What the Page Can Do Functions 

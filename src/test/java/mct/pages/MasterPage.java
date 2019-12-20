@@ -7,6 +7,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
 
 public class MasterPage {
 
@@ -126,6 +127,31 @@ public class MasterPage {
 		}
 
 		return false;
+	}
+	
+	public void selectElement(String locatores, String valueTotype) {
+		
+		
+		WebElement dropDown = driver.findElement(By.id(locatores));
+		Select select = new Select(driver.findElement(By.id(locatores)));
+		   select.selectByValue(valueTotype);
+		   
+		      
+		
+
+	}
+	public void typeOnElementForChange(String locatores, String valueTotype) {
+		if(locatores.contains("ID")) {
+			driver.findElement(By.id(locatores.split(":")[1])).clear();
+			driver.findElement(By.id(locatores.split(":")[1])).sendKeys(valueTotype);
+		}  else if(locatores.contains("Xpath")) {
+			driver.findElement(By.xpath(locatores.split(":")[1])).clear();
+			driver.findElement(By.xpath(locatores.split(":")[1])).sendKeys(valueTotype);
+		} else if(locatores.contains("Name")) {
+			driver.findElement(By.name(locatores.split(":")[1])).clear();
+			driver.findElement(By.name(locatores.split(":")[1])).sendKeys(valueTotype);
+		}
+
 	}
 
 	public void closeBrowser() {
