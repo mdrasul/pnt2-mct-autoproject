@@ -1,10 +1,14 @@
 package mct.pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.Select;
 
 import mct.util.SharedConfig;
 
 public class HomePage extends MasterPage{
+	
+	perfect
 
 	// All Locators Or XPath for this Page  
 	String loginLink = "ID:dLabellogin";
@@ -17,6 +21,16 @@ public class HomePage extends MasterPage{
 
 	
 	String myAccountLink = "Xpath:.//*[@id='drp_div']/ul/li/div/div[1]/a";
+	
+	String usDollar = "Xpath://select[@name='currency_type']";
+	String usDollarSymbol = "Xpath://span[contains(text(),'$')]";
+	
+	String indianRupee = "Xpath://select[@name='currency_type']";
+	String rupeeSymbol = "Xpath://span[contains(text(),'₹')]";
+	
+	String japaneseYen = "Xpath://select[@name='currency_type']";
+	String yenSymbol = "Xpath://span[contains(text(),'¥')]";
+	
 
 	
 
@@ -69,5 +83,37 @@ public class HomePage extends MasterPage{
 		clickElement(logOutLink);
 	}
 	
+	public void currencyDropDown1() {
+		gotoURL(SharedConfig.config.get("URL"));
+		Select currency = new Select(driver.findElement(By.xpath("//select[@name='currency_type']")));
+		currency.selectByVisibleText("United States dollar");
+	    
+		
+		
+	}
+	
+	public void currencyDropDown2() {
+		gotoURL(SharedConfig.config.get("URL"));
+		Select currency1 = new Select(driver.findElement(By.xpath("//select[@name='currency_type']")));
+		currency1.selectByVisibleText("Indian rupee");
+		
+	}
+	
+	public void currencyDropDown3() {
+		gotoURL(SharedConfig.config.get("URL"));
+		Select currency3 = new Select(driver.findElement(By.xpath("//select[@name='currency_type']")));
+		currency3.selectByVisibleText("Japanese yen");
+	}
 
+	public void currencySymbols() {
+		getElementText(usDollarSymbol);
+		getElementText(rupeeSymbol);
+		getElementText(yenSymbol);
+		
+	}
+	
 }
+
+
+
+	

@@ -26,4 +26,9 @@ allure-results
 /.classpath
 /.settings/
 /test-output/
+/.monkeys/
+
+
+
+
 
