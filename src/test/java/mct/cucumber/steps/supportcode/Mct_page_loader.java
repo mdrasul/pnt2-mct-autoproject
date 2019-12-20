@@ -14,6 +14,8 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import mct.pages.HomePage;
 import mct.pages.MyAccountPage;
 import mct.pages.MyOrdersPage;
+import mct.pages.ProfilePage;
+import mct.pages.RegPage;
 import mct.util.SharedConfig;
 
 public class Mct_page_loader {
@@ -25,6 +27,8 @@ public class Mct_page_loader {
 	public HomePage homePage;
 	public MyAccountPage myAccountPage;
 	public MyOrdersPage myOrdersPage;
+	public RegPage regPage;
+	public ProfilePage profilePage;
 
 
 
@@ -93,6 +97,30 @@ public class Mct_page_loader {
 		}
 		return myOrdersPage;
 	}
+	
+	
+	public RegPage getRegPage() {
+		if (regPage == null){
+			regPage = new RegPage(driver);
+		}
+		return regPage;
+	}
+	
+	
+	public ProfilePage getProfilePage() {
+		if (profilePage == null){
+			profilePage = new ProfilePage(driver);
+		}
+		return profilePage;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 }

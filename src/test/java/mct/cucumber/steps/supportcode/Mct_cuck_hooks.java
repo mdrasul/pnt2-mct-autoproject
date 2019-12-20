@@ -54,7 +54,10 @@ public class Mct_cuck_hooks {
 			}
 		}
 
-       ((JavascriptExecutor) driver).executeScript("sauce:job-result=" + (scenario.isFailed() ? "failed" : "passed"));
+		/*
+		 * ((JavascriptExecutor) driver).executeScript("sauce:job-result=" +
+		 * (scenario.isFailed() ? "failed" : "passed"));
+		 */
 		driver.close();
 	}
 }
