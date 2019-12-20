@@ -6,13 +6,16 @@ import java.net.URL;
 import org.openqa.selenium.MutableCapabilities;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 import mct.pages.HomePage;
+import mct.pages.LogoNavigation;
 import mct.pages.MyAccountPage;
+import mct.pages.MyAcctProfile;
 import mct.pages.MyOrdersPage;
 import mct.util.SharedConfig;
 
@@ -25,7 +28,9 @@ public class Mct_page_loader {
 	public HomePage homePage;
 	public MyAccountPage myAccountPage;
 	public MyOrdersPage myOrdersPage;
-
+	public LogoNavigation LogoNavigaitonPage;
+	public MyAcctProfile MyProfile;
+	
 
 
 	public WebDriver getDriver(){
@@ -59,11 +64,11 @@ public class Mct_page_loader {
 			    System.out.println(os);
 
 	        	if(os.contains("mac")) {
-					System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+"//chromedriver");
-					driver = new ChromeDriver();
+					System.setProperty("webdriver.firefox.driver",System.getProperty("user.dir")+"//geckodriver");
+					driver = new FirefoxDriver();
 				}else if(os.contains("windows")) {
-					System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+"//chromedriver.exe");
-					driver = new ChromeDriver();
+					System.setProperty("webdriver.firefox.driver",System.getProperty("user.dir")+"//geckodriver.exe");
+					driver = new FirefoxDriver();
 
 				}
 	        }		
@@ -93,6 +98,16 @@ public class Mct_page_loader {
 		}
 		return myOrdersPage;
 	}
-	
-	
+	public LogoNavigation getLogoNavigationPage() {
+		if ( LogoNavigaitonPage == null){
+			 LogoNavigaitonPage = new  LogoNavigation(driver);
+		}
+		return LogoNavigaitonPage;
+	}
+	public MyAcctProfile getMyAcctProfile() {
+		if (MyProfile == null){
+			MyProfile = new MyAcctProfile(driver);
+		}
+		return MyProfile;
+	}
 }
