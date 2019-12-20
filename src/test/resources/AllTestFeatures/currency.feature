@@ -18,4 +18,6 @@ Feature: Currency Symbol
     When User selects Japanese Yen from dropdown on MCT home page
     And User sees a currency symbol of ¥ under 'Our Products'
     
+    p
+    
     

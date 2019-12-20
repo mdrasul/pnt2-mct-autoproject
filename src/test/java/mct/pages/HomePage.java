@@ -7,6 +7,8 @@ import org.openqa.selenium.support.ui.Select;
 import mct.util.SharedConfig;
 
 public class HomePage extends MasterPage{
+	
+	perfect
 
 	// All Locators Or XPath for this Page  
 	String loginLink = "ID:dLabellogin";

@@ -15,7 +15,7 @@ import mct.util.SharedConfig;
 
 public class Mct_currency_steps {
 
-	
+	perfect 
 	Mct_page_loader page; 
 	
 	// Constructor 
