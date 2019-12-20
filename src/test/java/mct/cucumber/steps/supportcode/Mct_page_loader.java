@@ -14,6 +14,9 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import mct.pages.HomePage;
 import mct.pages.MyAccountPage;
 import mct.pages.MyOrdersPage;
+import mct.pages.ProductCategoryPage;
+import mct.pages.ProductsPage;
+import mct.pages.ViewCartPage;
 import mct.util.SharedConfig;
 
 public class Mct_page_loader {
@@ -25,9 +28,12 @@ public class Mct_page_loader {
 	public HomePage homePage;
 	public MyAccountPage myAccountPage;
 	public MyOrdersPage myOrdersPage;
-
-
-
+	public ProductCategoryPage ProductCategoryPage;
+	public ViewCartPage ViewCartPage;
+	public ProductsPage ProductsPage;
+	
+	
+	
 	public WebDriver getDriver(){
 
 		if (driver == null){
@@ -93,6 +99,31 @@ public class Mct_page_loader {
 		}
 		return myOrdersPage;
 	}
+	
+	
+	public ProductCategoryPage getProductCategoryPage () {
+		if (ProductCategoryPage == null) {
+			ProductCategoryPage = new ProductCategoryPage (driver);
+		}
+		return ProductCategoryPage; 
+	}
+	
+	
+	public ViewCartPage getViewCartPage () {
+		if (ViewCartPage == null) {
+			ViewCartPage = new ViewCartPage (driver);
+		}
+		return ViewCartPage; 
+	}
+	
+	public ProductsPage getProductsPage () {
+		if (ProductsPage == null) {
+			ProductsPage = new ProductsPage (driver);
+		}
+		return ProductsPage; 
+	}
+	
+	
 	
 	
 }
