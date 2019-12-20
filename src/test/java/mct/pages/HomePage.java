@@ -14,9 +14,9 @@ public class HomePage extends MasterPage{
 	String signUpButton = "ID:jqSignup";
 	String profileNameLabel = "Xpath://*[@id=\"dLabel\"]/span";
 	String logOutLink = "Xpath://*[@id=\"drp_div\"]/ul/li/div/div[2]/a";
-
-	
 	String myAccountLink = "Xpath:.//*[@id='drp_div']/ul/li/div/div[1]/a";
+	
+	String homeShopNOW = "Xpath://li[@class='item active']//a[contains(text(),'Shop Now')]";
 
 	
 
@@ -69,5 +69,10 @@ public class HomePage extends MasterPage{
 		clickElement(logOutLink);
 	}
 	
+	public void shopNow () {
+		
+		clickElement(homeShopNOW);
+	}
 
+	
 }

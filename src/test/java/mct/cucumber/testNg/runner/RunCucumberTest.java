@@ -7,7 +7,7 @@ import io.cucumber.testng.CucumberOptions;
 @CucumberOptions(
 		
 		 features = {"src/test/resources/AllTestFeatures"}, 
-		// features = {"src/test/resources/AllTestFeatures/order.feature"}, 
+		 //features = {"src/test/resources/AllTestFeatures/cartAdditionDeletion.feature"}, 
 		glue={"mct.cucumber.steps.definations","mct.cucumber.steps.supportcode"},
 		plugin = {"pretty", "json:target/cucumber-reports/cucumber.json", "html:target/cucumber-reports"}, 
 		monochrome=true,
