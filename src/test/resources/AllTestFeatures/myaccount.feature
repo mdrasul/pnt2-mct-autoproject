@@ -18,3 +18,9 @@ Feature: My Account
       | My Favorite Products |
       | My Favorite Sellers  |
       | Seller Dashboard     |
+
+      
+      Given User is on MCT home page
+    When User complete login with id "user" password "pass"
+    And I goto myaccount page
+      

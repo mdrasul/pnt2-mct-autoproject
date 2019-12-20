@@ -17,8 +17,8 @@ public class HomePage extends MasterPage{
 
 	
 	String myAccountLink = "Xpath:.//*[@id='drp_div']/ul/li/div/div[1]/a";
-
-	
+	String AnOrderFromHomePage = "Xpath://div[@class='products']/a[@data=101]";
+	String AccessoriesPage = "Xpath://div[@id=\"category_list\"]/a[1]";
 
 	
 	// ****** Constructor -
@@ -69,5 +69,12 @@ public class HomePage extends MasterPage{
 		clickElement(logOutLink);
 	}
 	
-
+	public void TakeMeToAnOrder() {
+		clickElement(AnOrderFromHomePage);
+	
+}
+	public void TakeMeToAccessoriesPage(){
+		clickElement(AccessoriesPage);
+	
+}
 }
