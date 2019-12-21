@@ -43,7 +43,7 @@ public class MyCategoriesPage extends MasterPage {
 
 	public void takeeMeToClothing() {
 		clickElement(Clothing);
-
+         System.out.println("");
 	}
 
 	public String ValedateClothing() {

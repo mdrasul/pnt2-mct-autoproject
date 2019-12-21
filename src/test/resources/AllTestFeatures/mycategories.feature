@@ -16,24 +16,24 @@ Feature: My Categories
   @test2
   Scenario: user see Accessories
     When I navigate to Accessories
-    And I exepcte to see "HEADSET WITH MIC"
+    And I  exepcte to see "HEADSET WITH MIC"
 
   @test3
   Scenario: user see Clothing
-    When I navigate to Clothing
-    And I exepcte to see "PETERS CASUAL"
+    When I  navigate to Clothing
+    And I  exepcte to see "PETERS CASUAL"
 
   @test4
   Scenario: user see Cofee Makers
-    When I navigate to COFEE MAKERS
-    And I exepcte to see "CUPS COFFEE MAKER"
+    When I  navigate to COFEE MAKERS
+    And I  exepcte to see "CUPS COFFEE MAKER"
 
   @test5
   Scenario: user see Digital
-    When I navigate to DIGITAL
-   And I exepcte to see "MEDIA"
+    When I  navigate to DIGITAL
+   And I  exepcte to see "MEDIA"
 
   @test6
   Scenario: user see More
-    When I navigate to MORE..
-    And I exepcte to see "HOME DECOR> (6)"
+    When I  navigate to MORE..
+    And I  exepcte to see "HOME DECOR> (6)"

@@ -37,7 +37,7 @@ public class Mct_categories_steps {
 
 	}
 
-	@Then("I exepcte to see {string}")
+	@When("I  exepcte to see {string}")
 	public void i_exepcte_to_see(String string) {
 		page.getmyCategoriesPage().ValedateAccessories();
 		page.getmyCategoriesPage().ValedateAccessories();
@@ -47,30 +47,30 @@ public class Mct_categories_steps {
 		page.getmyCategoriesPage().ValidateMore();
 	}
 
-	@When("I navigate to Clothing")
+	@When("I  navigate to Clothing")
 	public void i_navigate_to_Clothing() {
-
+	   
 		page.getmyCategoriesPage().takeeMeToClothing();
 	}
 
-	@When("I navigate to COFEE MAKERS")
+	@When("I  navigate to COFEE MAKERS")
 	public void i_navigate_to_COFEE_MAKERS() {
-
+		
 		page.getmyCategoriesPage().takeeMeToCofeeMakers();
 
 	}
 
-	@When("I navigate to DIGITAL")
+	@When("I  navigate to DIGITAL")
 	public void i_navigate_to_DIGITAL() {
-
+		
 		page.getmyCategoriesPage().takeeMeToDigital();
 	}
 
-	@When("I navigate to MORE..")
+	@When("I  navigate to MORE..")
 	public void i_navigate_to_MORE() {
-
+		
 		page.getmyCategoriesPage().takeeMeToMorel();
-
 	}
+
 
 }

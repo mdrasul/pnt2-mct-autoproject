@@ -96,7 +96,7 @@ public class Mct_page_loader {
 	}
 	
 	public MyCategoriesPage getmyCategoriesPage() {
-		if (myCategoriesPage == null) {
+		if (myCategoriesPage == null){
 			myCategoriesPage = new MyCategoriesPage(driver);
 		}
 		return myCategoriesPage;
