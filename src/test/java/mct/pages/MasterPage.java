@@ -127,6 +127,12 @@ public class MasterPage {
 
 		return false;
 	}
+	
+	// Navigate backward added by me
+	//public void navigateBack() {
+	//	driver.navigate().back();
+	//}
+	
 
 	public void closeBrowser() {
 		driver.close();

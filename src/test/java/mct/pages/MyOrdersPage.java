@@ -16,12 +16,9 @@ public class MyOrdersPage extends MasterPage {
 	}
 
 	
-	
-	
-	
 	String myOrderTable = "Xpath://table[@class='table table-bordered oder_table']";
 	String allTableRows = "Xpath://table[@class='table table-bordered oder_table']//tr";
-
+	String validate="Xpath://h1[text()='Orders']";
 	
 	
 	public boolean isOrderTableExist() {
@@ -39,7 +36,19 @@ public class MyOrdersPage extends MasterPage {
 
 	}
 	
-
+//New
+	
+	// Navigate backward added by me
+			public void navigateBack() {
+				waitFor(3000);
+				driver.navigate().back();
+				System.out.println("Back to My Account page1");
+			}
+			
+		public String verifiedOrder() {
+			return getElementText(validate);
+		}
+		
 
 
 

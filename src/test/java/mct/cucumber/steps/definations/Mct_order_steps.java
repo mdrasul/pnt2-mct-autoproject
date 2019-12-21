@@ -30,7 +30,7 @@ public class Mct_order_steps {
 		
 	}
 
-	@Then("I see a table with al lmy orderes")
+	@Then("I see a table with all my orderes")
 	public void i_see_a_table_with_al_lmy_orderes() {
 	    // Write code here that turns the phrase above into concrete actions
 	    // throw new cucumber.api.PendingException();
