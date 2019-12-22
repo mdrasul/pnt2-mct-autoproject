@@ -140,5 +140,17 @@ public class MasterPage {
 		}
 	}
 
+	public void clearElement(String locatores) {
+		if(locatores.contains("ID")) {
+			driver.findElement(By.id(locatores.split(":")[1])).clear();
+			waitFor(1000);
+		} else if(locatores.contains("Xpath")) {
+			driver.findElement(By.xpath(locatores.split(":")[1])).clear();
+			waitFor(1000);
+		} else if(locatores.contains("Name")) {
+			driver.findElement(By.name(locatores.split(":")[1])).clear();
+			waitFor(1000);
+		}
 
+	}
 }
