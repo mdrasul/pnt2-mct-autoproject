@@ -35,7 +35,7 @@ public class HomePage extends MasterPage{
 	
 	// What the Page Can Do Functions 
 	public void gotoHomePage() {
-		// openBrowser(broowser);
+		// openBrowser(browser);
 		gotoURL(SharedConfig.config.get("URL"));
 	}
 	
@@ -70,4 +70,8 @@ public class HomePage extends MasterPage{
 	}
 	
 
+
+
+
+	
 }
