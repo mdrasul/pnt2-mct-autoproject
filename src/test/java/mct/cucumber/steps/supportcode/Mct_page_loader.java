@@ -11,9 +11,11 @@ import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
+import mct.pages.CheckPriceChangePage;
 import mct.pages.HomePage;
 import mct.pages.MyAccountPage;
 import mct.pages.MyOrdersPage;
+import mct.pages.ProfilePage;
 import mct.util.SharedConfig;
 
 public class Mct_page_loader {
@@ -25,7 +27,8 @@ public class Mct_page_loader {
 	public HomePage homePage;
 	public MyAccountPage myAccountPage;
 	public MyOrdersPage myOrdersPage;
-
+	public ProfilePage profilePage;
+	public CheckPriceChangePage CheckPricePage;
 
 
 	public WebDriver getDriver(){
@@ -94,5 +97,16 @@ public class Mct_page_loader {
 		return myOrdersPage;
 	}
 	
-	
+	public ProfilePage getProfilePage() {
+		if (profilePage == null){
+			profilePage = new ProfilePage(driver);
+		}
+		return profilePage;
+	}
+	public CheckPriceChangePage getCheckPriceChangePage() {
+		if (CheckPricePage == null){
+			CheckPricePage= new CheckPriceChangePage(driver);
+		}
+		return CheckPricePage;
+}
 }
