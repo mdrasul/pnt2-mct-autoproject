@@ -1,6 +1,11 @@
 package mct.pages;
 
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 import mct.util.SharedConfig;
 
@@ -14,6 +19,8 @@ public class HomePage extends MasterPage{
 	String signUpButton = "ID:jqSignup";
 	String profileNameLabel = "Xpath://*[@id=\"dLabel\"]/span";
 	String logOutLink = "Xpath://*[@id=\"drp_div\"]/ul/li/div/div[2]/a";
+	
+
 
 	
 	String myAccountLink = "Xpath:.//*[@id='drp_div']/ul/li/div/div[1]/a";
@@ -62,8 +69,19 @@ public class HomePage extends MasterPage{
 		clickElement(profileNameLabel);
 		clickElement(myAccountLink);
 	}
+	public void scrollDown() {
+		JavascriptExecutor js = (JavascriptExecutor) driver;  
+		   js.executeScript("window.scrollBy(0,2000)");
 	
+	}
+	
+	
+
 		
+ 
+    	
+    
+	
 	public void logOut() {
 		clickElement(profileNameLabel);
 		clickElement(logOutLink);
