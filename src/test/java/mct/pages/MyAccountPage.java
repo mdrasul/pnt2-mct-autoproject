@@ -20,7 +20,7 @@ public class MyAccountPage extends MasterPage {
 	String LocatorsOfAllOptions = "Xpath://div[@class='myaccount_list']//div[@class='col-sm-12 col-lg-3 col-md-3']/a";
 	
 	String myorderLink = "Xpath://a[text()='My Orders']";
-
+	String sellerDashboardLink = "Xpath://a[contains(text(),'Seller Dashboard')]";
 	
 	// Getter & Setters -
 
@@ -43,9 +43,11 @@ public class MyAccountPage extends MasterPage {
 
 		
 	}
+	public void takeMetoSellerDashboardPage() {
+		clickElement(sellerDashboardLink);
+	}
 	
 	
-	// What the Page Can Do Functions 
 
 	
 	

@@ -3,6 +3,7 @@ package mct.cucumber.steps.supportcode;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+import org.checkerframework.checker.units.qual.s;
 import org.openqa.selenium.MutableCapabilities;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -14,7 +15,10 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import mct.pages.HomePage;
 import mct.pages.MyAccountPage;
 import mct.pages.MyOrdersPage;
+import mct.pages.MyProductsPage;
+import mct.pages.SellerDashboardPage;
 import mct.util.SharedConfig;
+import net.bytebuddy.asm.Advice.Return;
 
 public class Mct_page_loader {
 
@@ -25,7 +29,8 @@ public class Mct_page_loader {
 	public HomePage homePage;
 	public MyAccountPage myAccountPage;
 	public MyOrdersPage myOrdersPage;
-
+	public SellerDashboardPage sellerDashboardPage;
+	public MyProductsPage myProductsPage;
 
 
 	public WebDriver getDriver(){
@@ -93,6 +98,16 @@ public class Mct_page_loader {
 		}
 		return myOrdersPage;
 	}
-	
-	
+	public SellerDashboardPage getMySellerDashboardPage() {
+		if (sellerDashboardPage == null) {
+			sellerDashboardPage = new SellerDashboardPage(driver);
+		}
+		return sellerDashboardPage;
+	}
+	public MyProductsPage getMyProductsPage() {
+		if (myProductsPage == null) {
+			myProductsPage =new MyProductsPage(driver);
+		}
+	return myProductsPage;
+}
 }
