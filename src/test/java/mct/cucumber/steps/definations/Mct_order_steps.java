@@ -1,14 +1,6 @@
 package mct.cucumber.steps.definations;
 
-import static org.hamcrest.CoreMatchers.equalTo;
-import static org.hamcrest.MatcherAssert.assertThat;
-
-import java.util.List;
-
-import org.openqa.selenium.By;
 import org.testng.Assert;
-
-import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import mct.cucumber.steps.supportcode.Mct_page_loader;
@@ -16,6 +8,7 @@ import mct.cucumber.steps.supportcode.Mct_page_loader;
 public class Mct_order_steps {
 
 	Mct_page_loader page; 
+	
 	
 	public Mct_order_steps(Mct_page_loader page) {
 		this.page = page;
