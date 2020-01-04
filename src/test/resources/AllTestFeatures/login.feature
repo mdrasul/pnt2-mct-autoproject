@@ -5,11 +5,18 @@ Feature: Login
   Background: User on HOme Page
     Given User is on MCT home page
 
-  Scenario: User can do a login with valid credentials
-    When User complete login with id "user" password "pass"
-    Then User see  profile name as "James Williams"
+  Scenario: Positive Login Test
+  When User clicks on Login link
+  And User enters username
+  And User enters password
+  And User clicks login
+  Then User validates profile name
+  Then User can click on profile name
+  Then User can logout
 
-  Scenario: User can do a login with valid id and password
-    When User complete login with id "mrabc123" password "abc123"
-    Then User see  profile name as "Mr Abc123"
-    
+  Scenario: Negative Login Test
+  When User clicks on Login link
+  And User enters invalid username
+  And User enters invalid password
+  And User clicks login
+  Then User validates Invalid Login Link

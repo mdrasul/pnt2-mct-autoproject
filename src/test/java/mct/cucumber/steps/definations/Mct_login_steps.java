@@ -1,5 +1,6 @@
 package mct.cucumber.steps.definations;
 
+import io.cucumber.java.en.And;
 import org.testng.Assert;
 
 import io.cucumber.java.en.Given;
@@ -22,18 +23,53 @@ public class Mct_login_steps {
 		page.getHomePage().gotoHomePage();		
 	}
 	
-	@When("User complete login with id {string} password {string}")
-	public void user_complete_login_with_id_password(String id, String password) {
-		
-		page.getHomePage().loginTest(id,password);
+	@When("User clicks on Login link")
+	public void user_clicks_on_Login_link() {
+	page.getHomePage().clickLoginLink();
 	}
 
-	@Then("User see  profile name as {string}")
-	public void user_see_profile_name_as(String expectedProfileName) {
-		
-		String actualProfileName = page.getHomePage().getProfileNameLabel();
-		Assert.assertEquals(actualProfileName.toLowerCase(),expectedProfileName.toLowerCase(),"Failed To FInd Proper Profile Name ");
+	@And("User enters username")
+	public void user_enters_username() {
+		page.getHomePage().SendKeysToUserName();
 	}
 
-	
+	@And("User enters invalid username")
+	public void user_enters_invalid_username() {
+		page.getHomePage().SendInvalidKeysToUserName();
+	}
+
+	@And("User enters invalid password")
+	public void user_enters_invalid_password() {
+		page.getHomePage().SendInvalidKeysToPassWord();
+	}
+
+	@And("User enters password")
+	public void user_enters_password() {
+		page.getHomePage().SendKeysToPassWord();
+	}
+
+	@And("User clicks login")
+		public void user_clicks_login() {
+			page.getHomePage().clickLoginButton();
+		}
+
+	@Then("User validates profile name")
+	public void user_validates_profile_name() {
+		Assert.assertEquals(page.getHomePage().getProfileName(), "TEST USER");
+	}
+
+	@Then("User validates Invalid Login Link")
+	public void user_validates_invalid_login_link() {
+		Assert.assertEquals(page.getHomePage().getURL(), "https://www.demo.iscripts.com/multicart/demo/login.php?flag=0&txtUserName=IncorrectUsername");
+	}
+
+	@Then("User can logout")
+	public void user_can_logout() {
+page.getHomePage().clickLogoutButton();	}
+
+	@Then("User can click on profile name")
+	public void user_can_click_profilelabel() {
+		page.getHomePage().clickProfileName();	}
 }
+
+

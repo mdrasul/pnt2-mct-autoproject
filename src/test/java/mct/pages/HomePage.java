@@ -70,4 +70,51 @@ public class HomePage extends MasterPage{
 	}
 	
 
+
+	public void clickLoginLink() {
+		clickElement(loginLink);
+	}
+
+	public void SendKeysToUserName(){
+		typeOnElement(usernameFIeld, "testuser123");
+	}
+
+	public void SendKeysToPassWord(){
+		typeOnElement(passwordField, "testabc123");
+	}
+
+	public void clickLoginButton() {
+		clickElement(loginButton);
+	}
+
+	public String getProfileName(){
+
+		return getElementText(profileNameLabel);
+
+	}
+
+	public void clickProfileNameLabel (){
+
+		clickElement(profileNameLabel);
+	}
+
+	public void clickLogoutButton(){
+
+		clickElement(logOutLink);
+	}
+
+	public void SendInvalidKeysToUserName(){
+		typeOnElement(usernameFIeld, "IncorrectUsername");
+	}
+
+	public void SendInvalidKeysToPassWord(){
+		typeOnElement(passwordField, "IncorrectPassWord");
+	}
+
+	public String getURL(){
+return driver.getCurrentUrl();	}
+
+	public void clickProfileName(){
+clickElement(profileNameLabel);	}
 }
+
