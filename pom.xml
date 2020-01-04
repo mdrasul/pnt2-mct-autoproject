@@ -94,7 +94,7 @@
 					<testFailureIgnore>true</testFailureIgnore>
 				</configuration>
 			</plugin>
-		
+
 		
 		
 		<!-- Reporting -->

@@ -12,4 +12,3 @@ Feature: Login
   Scenario: User can do a login with valid id and password
     When User complete login with id "mrabc123" password "abc123"
     Then User see  profile name as "Mr Abc123"
-    
