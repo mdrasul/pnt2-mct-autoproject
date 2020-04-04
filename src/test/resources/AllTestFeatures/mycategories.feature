@@ -4,7 +4,7 @@ Feature: My Categories
   Background: User on Home Page
     Given User is on MCT home page
      When User complete login with id "user" password "pass"
-    Then User see  profile name as "James Williams"
+    Then User see  profile name as "james williams"
 
 
   @test1

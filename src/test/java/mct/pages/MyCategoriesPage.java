@@ -13,11 +13,11 @@ public class MyCategoriesPage extends MasterPage {
 	}
 
 	String MyCategory = "Xpath://div[@id='category_list']";
-	String Accessories = "Xpath://a[@title='Accessories']";
-	String Clothing = "Xpath://a[@title='Clothing']";
-	String CofeeMakers = "Xpath://a[@title='Cofee makers']";
-	String Digital = "Xpath://a[@title='Digital']";
-	String More = "Xpath://a[@title='Category List']";
+	String Accessories = "Xpath://*[@title='Accessories']";
+	String Clothing = "Xpath://*[@title='Clothing']";
+	String CofeeMakers = "Xpath://*[@title='Cofee makers']";
+	String Digital = "Xpath://*[@title='Digital']";
+	String More = "Xpath://*[@title='Category List']";
 
 	String ValidateAccessories = "Xpath://*[@title='Headset With Mic']";
 	String ValidateClothing = "Xpath://*[@title='Peters casual']";
@@ -43,7 +43,7 @@ public class MyCategoriesPage extends MasterPage {
 
 	public void takeeMeToClothing() {
 		clickElement(Clothing);
-         System.out.println("");
+        
 	}
 
 	public String ValedateClothing() {

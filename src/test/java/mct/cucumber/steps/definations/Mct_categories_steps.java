@@ -40,7 +40,6 @@ public class Mct_categories_steps {
 	@When("I  exepcte to see {string}")
 	public void i_exepcte_to_see(String string) {
 		page.getmyCategoriesPage().ValedateAccessories();
-		page.getmyCategoriesPage().ValedateAccessories();
 		page.getmyCategoriesPage().ValedateClothing();
 		page.getmyCategoriesPage().ValidateCofeeMakers();
 		page.getmyCategoriesPage().ValidateDigital();
