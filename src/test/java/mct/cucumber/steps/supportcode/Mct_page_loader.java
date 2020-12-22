@@ -13,6 +13,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 
 import mct.pages.HomePage;
 import mct.pages.MyAccountPage;
+import mct.pages.MyCategoriesPage;
 import mct.pages.MyOrdersPage;
 import mct.util.SharedConfig;
 
@@ -25,7 +26,7 @@ public class Mct_page_loader {
 	public HomePage homePage;
 	public MyAccountPage myAccountPage;
 	public MyOrdersPage myOrdersPage;
-
+	public MyCategoriesPage myCategoriesPage;
 
 
 	public WebDriver getDriver(){
@@ -94,5 +95,10 @@ public class Mct_page_loader {
 		return myOrdersPage;
 	}
 	
-	
+	public MyCategoriesPage getmyCategoriesPage() {
+		if (myCategoriesPage == null){
+			myCategoriesPage = new MyCategoriesPage(driver);
+		}
+		return myCategoriesPage;
+	}
 }
